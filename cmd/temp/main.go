@@ -107,14 +107,13 @@ func display(f io.Writer, w Weatherdata, hours int,
 		for _, l := range t.Location {
 			temp := int(math.Round(l.Temperature.Value))
 			abstemp := int(math.Abs(math.Round(l.Temperature.Value)))
-			var offset string
 			var stars string
 			if temp >= 0 {
 				stars = "|" + strings.Repeat("-", temp)
 			} else {
 				stars = strings.Repeat("-", abstemp) + "|"
 			}
-			offset = strings.Repeat(" ", int(math.Abs(math.Min(0.0, math.Round(min))))+
+			offset := strings.Repeat(" ", int(math.Abs(math.Min(0.0, math.Round(min))))+
 				int(math.Min(0.0, float64(temp))))
 
 			fmt.Fprintf(f, "%02d:%02d %3d°C %s%s\n",
