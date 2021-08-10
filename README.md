@@ -1,4 +1,4 @@
-# `temp`: what will the temperature be in the next few hours?
+# temp: what will the temperature be in the next few hours?
 
 `temp` is a CLI tool which uses  `yr.no` [APIs](http://om.yr.no/verdata/free-weather-data/) to display a temperature forecast for the next several hours.
 
